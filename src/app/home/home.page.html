@@ -14,7 +14,12 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <br><br>
+  <ion-label position="floating">Enter the Note</ion-label>
+    <ion-input  type="text" [(ngModel)]="note" placeholer (keyup.enter)="onenter()"></ion-input>
+    Notes Your Entered Are 
+   <p *ngFor="let no of notes">
+     {{no}}<ion-button (click)="ondelete(no)">Delete</ion-button>
+     </p>
   </div>
 </ion-content>
